@@ -1,0 +1,22 @@
+<body>
+  <div class="main">
+    <div>
+      <input type="text" [(ngModel)]="newtext" />
+      <button (click)="addtext()">add</button>
+    </div>
+
+    @for (item of todo; track $index) {
+      <div *ngIf="!item.isEditing">
+        <p [class.done]="item.done">{{ item.text }}</p>
+        <button (click)="deleteToDo($index)">delete</button>
+        <button (click)="edit(item)">edit</button>
+        <button (click)="toggleDone(item)">Done</button>
+      </div>
+
+      <div *ngIf="item.isEditing">
+        <input [(ngModel)]="item.text" />
+        <button (click)="save(item)">Save</button>
+      </div>
+    }
+  </div>
+</body>

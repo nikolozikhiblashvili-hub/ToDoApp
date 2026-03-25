@@ -1,0 +1,28 @@
+.done {
+  text-decoration: line-through;
+  color: red;
+}
+body{
+  display: flex;
+  justify-content: center;
+ padding: 60px;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+}
+.main{
+  display: flex;
+padding: 30px;
+  align-items: center;
+  flex-direction: column;
+  background-color: blue;
+  width: 300px;
+  height: 200px;
+}
+button{
+  background-color: red;
+  border-radius: 10px;
+  border: none;
+  width: 50px;
+  height: 20px;
+}
