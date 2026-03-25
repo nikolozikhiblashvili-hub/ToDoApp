@@ -5,18 +5,22 @@
       <button (click)="addtext()">add</button>
     </div>
 
-    @for (item of todo; track $index) {
+    <ul>
+    <li *ngFor="let item of todo; let i = index">
+      <!-- Normal mode -->
       <div *ngIf="!item.isEditing">
         <p [class.done]="item.done">{{ item.text }}</p>
-        <button (click)="deleteToDo($index)">delete</button>
-        <button (click)="edit(item)">edit</button>
+        <button (click)="deleteToDo(i)">Delete</button>
+        <button (click)="edit(item)">Edit</button>
         <button (click)="toggleDone(item)">Done</button>
       </div>
 
+      <!-- Edit mode -->
       <div *ngIf="item.isEditing">
         <input [(ngModel)]="item.text" />
         <button (click)="save(item)">Save</button>
       </div>
-    }
+    </li>
+  </ul>
   </div>
 </body>
